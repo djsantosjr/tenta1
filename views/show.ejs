@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrada</title>
+</head>
+<body>
+
+<h3>Registros<h3>
+    <table border="1">
+        <thead>
+            <table>
+                <tr>
+                    <td align="center"><b>Contrato de dados</b></td>
+                </tr>
+                <tr>
+                    <td>Nome</td>
+                    <td><input type="text" placeholder="Nome" name="name"></td>
+                </tr>
+                <tr>
+                    <td>CPF</td>
+                    <td><input type="password" placeholder="CPF" name="cpf"></td>
+                </tr>
+                <tr>
+                    <td>CEP</td>
+                    <td><input type="password" placeholder="CEP" name="cep"></td>
+                </tr>
+                <tr>
+                    <td>Logradouro</td>
+                    <td><input type="text" placeholder="Logradouro" name="Logradouro"></td>
+                </tr>
+                <tr>
+                    <td>Bairro</td>
+                    <td><input type="text" placeholder="Bairro" name="bairro"></td>
+                </tr>
+                <tr>
+                    <td>Localidade</td>
+                    <td><input type="text" placeholder="Localidade" name="Localidade"></td>
+                </tr>
+                <tr>
+                    <td>UF</td>
+                    <td>
+                        <select name="Estado">
+                            <option value="estado1">AC</option>
+                            <option value="estado2">AL</option>
+                            <option value="estado3">AP</option>
+                            <option value="estado4">AM</option>
+                            <option value="estado5">BA</option>
+                            <option value="estado6">CE</option>
+                            <option value="estado7">DF</option>
+                            <option value="estado8">ES</option>
+                            <option value="estado9">GO</option>
+                            <option value="estado10">MA</option>
+                            <option value="estado11">MT</option>
+                            <option value="estado12">MS</option>
+                            <option value="estado13">MG</option>
+                            <option value="estado14">PA</option>
+                            <option value="estado15">PB</option>
+                            <option value="estado16">PR</option>
+                            <option value="estado17">PE</option>
+                            <option value="estado18">PI</option>
+                            <option value="estado19">RJ</option>
+                            <option value="estado20">RN</option>
+                            <option value="estado21">RS</option>
+                            <option value="estado22">RO</option>
+                            <option value="estado23">RR</option>
+                            <option value="estado24">SC</option>
+                            <option value="estado25">SP</option>
+                            <option value="estado26">SE</option>
+                            <option value="estado27">TO</option>
+                        </select>
+
+                    </td>
+                </tr>
+        </thead>
+        <tbody>
+        <% data.forEach(function(details) { %>
+            <tr>
+                    <tr>
+                        <td align="center"><b>Contrato de dados</b></td>
+                    </tr>
+                    <tr>
+                        <td>Nome</td>
+                        <td><%= details.nome %></td>
+                    </tr>
+                    <tr>
+                        <td>CPF</td>
+                        <td><%= details.cpf %></td>
+                    </tr>
+                    <tr>
+                        <td>CEP</td>
+                        <td><%= details.cep %></td>
+                    </tr>
+                    <tr>
+                        <td>Logradouro</td>
+                        <td><%= details.logradouro %></td>
+                    </tr>
+                    <tr>
+                        <td>Bairro</td>
+                        <td><%= details.bairro %></td>
+                    </tr>
+                    <tr>
+                        <td>Localidade</td>
+                        <td><%= details.nome %></td>
+                    </tr>
+                    <tr>
+                        <td>UF</td>
+                        <td>
+                            <select name="Estado">
+                                <option value="estado1">AC</option>
+                                <option value="estado2">AL</option>
+                                <option value="estado3">AP</option>
+                                <option value="estado4">AM</option>
+                                <option value="estado5">BA</option>
+                                <option value="estado6">CE</option>
+                                <option value="estado7">DF</option>
+                                <option value="estado8">ES</option>
+                                <option value="estado9">GO</option>
+                                <option value="estado10">MA</option>
+                                <option value="estado11">MT</option>
+                                <option value="estado12">MS</option>
+                                <option value="estado13">MG</option>
+                                <option value="estado14">PA</option>
+                                <option value="estado15">PB</option>
+                                <option value="estado16">PR</option>
+                                <option value="estado17">PE</option>
+                                <option value="estado18">PI</option>
+                                <option value="estado19">RJ</option>
+                                <option value="estado20">RN</option>
+                                <option value="estado21">RS</option>
+                                <option value="estado22">RO</option>
+                                <option value="estado23">RR</option>
+                                <option value="estado24">SC</option>
+                                <option value="estado25">SP</option>
+                                <option value="estado26">SE</option>
+                                <option value="estado27">TO</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <td><%= details.nome %></td>
+                <td><%= details.cpf %></td>
+                <td><%= details.cep %></td>
+                <td><%= details.logradouro %></td>
+                <td><%= details.bairro %></td>
+                <td><%= details.localidade %></td>
+                <td><%= details.uf %></td>
+                <td><a href="/edit/<%= details._id %">Editar</a> - <a href="/delete/<%= details.id %">Deletar</a></td>
+            </tr>
+            <% }) %>
+        </tbody>
+        <button><a href="/">Novo</a></button>
+    </table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro de clientes</title>
+    </head>
+    <body>
+        <h3>Editar cadastro</h3>
+            <% data.forEach(function(details) { %>
+                <form action="/edit/<%= details._id %>" method="POST">
+                    <input type="text" value="<%= details.name %>" name="name">
+                    <input type="text" value="<%= details.surname %>" name="surname">
+                </form>
+                <br />
+                <button><a href="/show">Todos</a></button>
+                <button type="submit">Editar</button>
+            <% }) %>
+    </body>
+    
+
+</html>
